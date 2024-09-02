@@ -6,15 +6,17 @@ const routes = [
     {
         path: "/content/profile",
         component: Profile,
+        name: "Profile",
     },
     {
         path: "/portfolio",
         component: Portfolio,
+        name: "Portfolio",
     },
     {
         path: "/portfolio/:id",
         component: PortfolioDetail,
+        //name: "Portfolio Detail",
     },
 ];
-
 export default routes;
