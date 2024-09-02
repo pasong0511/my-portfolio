@@ -18,5 +18,10 @@ const routes = [
         component: PortfolioDetail,
         //name: "Portfolio Detail",
     },
+    {
+        path: "/SNS",
+        component: PortfolioDetail,
+        name: "SNS",
+    },
 ];
 export default routes;

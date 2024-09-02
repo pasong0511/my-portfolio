@@ -29,6 +29,11 @@ function Header({ routes }: IHeaderProps) {
                         ))}
                 </ul>
             </nav>
+            <div className="open_menu">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
         </div>
     );
 }
