@@ -19,7 +19,7 @@ function Footer() {
                                     alt="연락처"
                                 />
                             </div>
-                            <p>010-6535-1781</p>
+                            <p>010-2968-9339</p>
                         </li>
                         <li>
                             <div>
@@ -28,7 +28,7 @@ function Footer() {
                                     alt="이메일"
                                 />
                             </div>
-                            <p>akgk132@naver.com</p>
+                            <p>test123@naver.com</p>
                         </li>
                     </ul>
                 </div>
