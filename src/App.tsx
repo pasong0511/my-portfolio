@@ -9,7 +9,7 @@ import Footer from "./components/section/Footer";
 function App() {
     return (
         <Router>
-            <div>
+            <div id="app">
                 <Header routes={routes} />
                 <Content routes={routes} />
                 <Footer />

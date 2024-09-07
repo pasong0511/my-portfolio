@@ -10,6 +10,25 @@ a {
     color: inherit; /* 부모 요소의 글자색을 상속 */
 }
 
+#app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* 전체 화면의 높이 */
+}
+
+#content {
+    flex: 1; /* Content 영역이 남은 공간을 차지하게 만듦 */
+    padding: 20px;
+}
+
+#footer {
+    background: #1a1a1a;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto; /* 푸터를 화면 하단에 붙이기 */
+}
+
 /* ----------------------------------- 헤더 ----------------------------------- */
 #header {
     width: 100%;
@@ -103,4 +122,52 @@ a {
     background: #fff;
     position: absolute;
     transition: 0.5s;
+}
+
+#footer {
+    background: #1a1a1a;
+}
+
+.contact {
+    width: 1400px;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+.contact_con {
+    width: 50%;
+    float: left;
+    border-right: 1px solid #727171;
+}
+
+.contact_con .contact_info li div img {
+    width: 20px;
+}
+
+#content {
+    flex: 1;
+    padding: 20px;
+    padding-top: 130px; /* 헤더의 높이 100px + 30px 패딩을 고려하여 여백 추가 */
+    background: #1a1a1a;
+}
+
+.menu_tab {
+    display: flex;
+    flex-direction: row;
+}
+
+.tab_item {
+    display: block;
+    line-height: 28px;
+    padding: 5px 15px;
+    border-radius: 30px;
+
+    /* background: #39e269; */
+    color: #fff;
+    font-weight: bold;
+    border: 1px solid #fff;
+}
+
+.tab_item.active {
+    background: #39e269;
 }
