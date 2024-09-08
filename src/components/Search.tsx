@@ -1,9 +1,17 @@
 import React from "react";
 
-function Search() {
+interface SearchProps {
+    setIsModalOpen: (modalState: boolean) => void;
+}
+
+function Search({ setIsModalOpen }: SearchProps) {
+    const handleClick = () => {
+        setIsModalOpen(true);
+    };
+
     return (
         <div className="search">
-            <button>
+            <button onClick={handleClick}>
                 <img src="/theme/portfolio/img/search.svg" alt="search" />
             </button>
         </div>

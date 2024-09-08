@@ -8,6 +8,7 @@ import SearchModal from "./SearchModal";
 
 function Portfolio() {
     const [activeTab, setActiveTab] = useState<ITab>(tabDatas[0]);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const handleActiveTab = (tab: ITab) => {
         setActiveTab(tab);
@@ -19,7 +20,9 @@ function Portfolio() {
             : item.kategorie === activeTab.kategorie
     );
 
-    const handleClose = () => {};
+    const handleClose = () => {
+        setIsModalOpen(false);
+    };
 
     return (
         <div>
@@ -29,11 +32,11 @@ function Portfolio() {
                 activeTab={activeTab}
                 setActiveTab={handleActiveTab}
             />
-            <Search />
+            <Search setIsModalOpen={setIsModalOpen} />
             <div>
                 <CardList filteredItems={filteredItems} />
             </div>
-            <SearchModal isOpen={true} onClose={handleClose} />
+            <SearchModal isModalOpen={isModalOpen} onClose={handleClose} />
         </div>
     );
 }

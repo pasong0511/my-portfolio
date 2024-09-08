@@ -2,13 +2,25 @@ import React, { useEffect } from "react";
 import ReactDOM from "react-dom";
 
 interface ModalProps {
-    isOpen: boolean;
+    isModalOpen: boolean;
     onClose: () => void;
     children: React.ReactNode;
 }
 
-function Modal({ isOpen, onClose, children }: ModalProps) {
-    if (!isOpen) return null;
+function Modal({ isModalOpen, onClose, children }: ModalProps) {
+    useEffect(() => {
+        const handleESCClose = (event: KeyboardEvent) => {
+            if (event.key === "Escape") {
+                onClose();
+            }
+        };
+
+        document.addEventListener("keydown", handleESCClose);
+
+        return () => document.addEventListener("keydown", handleESCClose);
+    }, [onClose]);
+
+    if (!isModalOpen) return null;
 
     return ReactDOM.createPortal(
         <div className="modal" onClick={onClose}>

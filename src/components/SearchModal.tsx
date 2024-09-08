@@ -2,14 +2,14 @@ import React from "react";
 import Modal from "./Modal";
 
 function SearchModal({
-    isOpen,
+    isModalOpen,
     onClose,
 }: {
-    isOpen: boolean;
+    isModalOpen: boolean;
     onClose: () => void;
 }) {
     return (
-        <Modal isOpen={isOpen} onClose={onClose}>
+        <Modal isModalOpen={isModalOpen} onClose={onClose}>
             <h2>Search Portfolio</h2>
             <input type="text" placeholder="Search..." />
         </Modal>
