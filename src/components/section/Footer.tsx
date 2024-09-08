@@ -1,4 +1,5 @@
 import React from "react";
+import EmailForm from "../EmailForm";
 
 function Footer() {
     return (
@@ -34,46 +35,7 @@ function Footer() {
                 </div>
             </article>
             <div>
-                <form
-                    id="emailForm"
-                    className="gform"
-                    method="POST"
-                    data-email="songhee6392@gmail.com"
-                    action="https://script.google.com/macros/s/AKfycbzaYn7w8t_y--QMMUithJkmjxxgTEawqiSHxQsuy0NRYgcQapuxpPwaxJ8e4WLw7OMN/exec"
-                >
-                    <div className="form-row">
-                        <div className="col-md-12">
-                            <input
-                                type="text"
-                                className="form-control"
-                                id="senderEmail"
-                                name="senderEmail"
-                                placeholder="Your Email"
-                                required
-                            />
-
-                            <input
-                                type="text"
-                                className="form-control"
-                                id="senderName"
-                                name="senderName"
-                                placeholder="Your Name"
-                                required
-                            />
-
-                            <textarea
-                                className="form-control"
-                                id="message"
-                                name="message"
-                                placeholder="Your Message"
-                            ></textarea>
-
-                            <button id="btnSubmit" className="btn-submit mt-2">
-                                Send Message
-                            </button>
-                        </div>
-                    </div>
-                </form>
+                <EmailForm />
             </div>
         </footer>
     );
