@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import Tab, { ITab } from "./Tab";
 import CardList from "./CardList";
 import { portfolioDatas, tabDatas } from "../data/data";
+import Search from "./Search";
+import SearchModal from "./SearchModal";
 
 function Portfolio() {
     const [activeTab, setActiveTab] = useState<ITab>(tabDatas[0]);
@@ -17,6 +19,8 @@ function Portfolio() {
             : item.kategorie === activeTab.kategorie
     );
 
+    const handleClose = () => {};
+
     return (
         <div>
             <h2>Portfolio Page</h2>
@@ -25,9 +29,11 @@ function Portfolio() {
                 activeTab={activeTab}
                 setActiveTab={handleActiveTab}
             />
+            <Search />
             <div>
                 <CardList filteredItems={filteredItems} />
             </div>
+            <SearchModal isOpen={true} onClose={handleClose} />
         </div>
     );
 }
