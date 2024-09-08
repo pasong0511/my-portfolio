@@ -22,6 +22,16 @@ const routes = [
         path: "/SNS",
         component: PortfolioDetail,
         name: "SNS",
+        children: [
+            {
+                name: "Instagram",
+                externalLink: "https://www.instagram.com",
+            },
+            {
+                name: "Facebook",
+                externalLink: "https://www.facebook.com",
+            },
+        ],
     },
 ];
 export default routes;

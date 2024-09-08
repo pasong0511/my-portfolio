@@ -103,6 +103,50 @@ a {
     cursor: pointer;
 }
 
+#header nav .main_menu > li > a {
+    display: block;
+    width: auto;
+    height: 100%;
+    font-size: 16px;
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#header nav .main_menu > li > span {
+    display: block;
+    width: auto;
+    height: 100%;
+    font-size: 16px;
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#header nav .main_menu > li > span {
+    display: block;
+    width: auto;
+    height: 100%;
+    font-size: 16px;
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.submenu_link {
+    display: block;
+    width: auto;
+    height: 100%;
+    font-size: 16px;
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 #header .open_menu {
     position: fixed;
     width: 30px;
