@@ -328,3 +328,12 @@ a {
     font-size: 24px;
     cursor: pointer;
 }
+
+.navigation_list {
+    display: flex;
+    flex-direction: column;
+}
+
+.navigation_list a {
+    color: #fff;
+}
