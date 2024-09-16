@@ -1,0 +1,76 @@
+[
+    {
+        "folder_name": "title1",
+        "id": "1",
+        "files": [
+            { "id": 1, "imgSrc": "/uploads/post/title1/1.jpg" },
+            { "id": 2, "imgSrc": "/uploads/post/title1/2.jpg" },
+            { "id": 3, "imgSrc": "/uploads/post/title1/3.jpg" },
+            { "id": 4, "imgSrc": "/uploads/post/title1/4.webp" },
+            { "id": 5, "imgSrc": "/uploads/post/title1/5.webp" }
+        ]
+    },
+    {
+        "folder_name": "title2",
+        "id": "2",
+        "files": [
+            { "id": 1, "imgSrc": "/uploads/post/title2/1.jpg" },
+            { "id": 2, "imgSrc": "/uploads/post/title2/2.jpg" },
+            { "id": 3, "imgSrc": "/uploads/post/title2/3.jpg" }
+        ]
+    },
+    {
+        "folder_name": "title3",
+        "id": "3",
+        "files": [
+            { "id": 1, "imgSrc": "/uploads/post/title3/1.jpg" },
+            { "id": 2, "imgSrc": "/uploads/post/title3/2.jpg" },
+            { "id": 3, "imgSrc": "/uploads/post/title3/3.jpg" }
+        ]
+    },
+    {
+        "folder_name": "title4",
+        "id": "4",
+        "files": [
+            { "id": 1, "imgSrc": "/uploads/post/title4/1.jpg" },
+            { "id": 2, "imgSrc": "/uploads/post/title4/2.jpg" },
+            { "id": 3, "imgSrc": "/uploads/post/title4/3.jpg" }
+        ]
+    },
+    {
+        "folder_name": "title5",
+        "id": "5",
+        "files": [
+            { "id": 1, "imgSrc": "/uploads/post/title5/1.jpg" },
+            { "id": 2, "imgSrc": "/uploads/post/title5/2.jpg" },
+            { "id": 3, "imgSrc": "/uploads/post/title5/3.jpg" }
+        ]
+    },
+    {
+        "folder_name": "title6",
+        "id": "6",
+        "files": [
+            { "id": 1, "imgSrc": "/uploads/post/title6/1.jpg" },
+            { "id": 2, "imgSrc": "/uploads/post/title6/2.jpg" },
+            { "id": 3, "imgSrc": "/uploads/post/title6/3.jpg" }
+        ]
+    },
+    {
+        "folder_name": "title7",
+        "id": "7",
+        "files": [
+            { "id": 1, "imgSrc": "/uploads/post/title7/1.jpg" },
+            { "id": 2, "imgSrc": "/uploads/post/title7/2.jpg" },
+            { "id": 3, "imgSrc": "/uploads/post/title7/3.jpg" }
+        ]
+    },
+    {
+        "folder_name": "title8",
+        "id": "8",
+        "files": [
+            { "id": 1, "imgSrc": "/uploads/post/title8/1.jpg" },
+            { "id": 2, "imgSrc": "/uploads/post/title8/2.jpg" },
+            { "id": 3, "imgSrc": "/uploads/post/title8/3.jpg" }
+        ]
+    }
+]

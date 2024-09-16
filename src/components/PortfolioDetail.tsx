@@ -4,8 +4,10 @@ import { portfolioDatas } from "../data/data";
 import { Link, useParams } from "react-router-dom";
 import PrevNextNavigation from "./PrevNextNavigation";
 
+import postData from "../data/postData.json";
+
 export interface PortfolioItem {
-    id: number;
+    id: string;
     title: string;
     kategorie: string;
     imgSrc: string;
@@ -13,17 +15,20 @@ export interface PortfolioItem {
 
 function PortfolioDetail() {
     const { id } = useParams();
-    console.log("🚗", id);
+    console.log("🚗id", id);
 
-    console.log(portfolioDatas);
+    console.log("json 데이터로 만든데이터 전체목록", postData);
 
     const currentItemIndex =
-        id && portfolioDatas.findIndex((item, index) => item.id === Number(id));
+        id && postData.findIndex((item, index) => item.id === id);
+
+    console.log("인덱스", currentItemIndex);
+
     const currentItem =
         currentItemIndex &&
         currentItemIndex !== -1 &&
         currentItemIndex !== null &&
-        portfolioDatas[currentItemIndex];
+        postData[currentItemIndex];
 
     const prevNextItem =
         currentItemIndex !== -1 && currentItemIndex !== null
@@ -44,9 +49,20 @@ function PortfolioDetail() {
 
     if (!currentItem) return <div>존재하지 않는 게시글 입니다.</div>;
 
+    console.log("🛩하나목록 ", currentItem);
+
     return (
         <div>
-            <h1>{currentItem.title}</h1>
+            <h1>{currentItem.folder_name}</h1>
+            <div>
+                <ul>
+                    {currentItem.files.map((item) => (
+                        <li key={item.id}>
+                            <img src={item.imgSrc} alt="" />
+                        </li>
+                    ))}
+                </ul>
+            </div>
             <PrevNextNavigation prevNextItem={prevNextItem} />
         </div>
     );
