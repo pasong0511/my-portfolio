@@ -1,13 +1,17 @@
 import React, { useState, useMemo } from "react";
-import { Link } from "react-router-dom";
+
 import Tab, { ITab } from "./Tab";
 import CardList from "./CardList";
-import { portfolioDatas, tabDatas } from "../data/data";
+
 import Search from "./Search";
 import SearchModal from "./SearchModal";
 
+import postData from "../data/postData.json";
+
+import tabData from "../data/tabData.json";
+
 function Portfolio() {
-    const [activeTab, setActiveTab] = useState<ITab>(tabDatas[0]);
+    const [activeTab, setActiveTab] = useState<ITab>(tabData[0]);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [searchKeyword, setSearchKeyword] = useState<string>("");
 
@@ -26,10 +30,10 @@ function Portfolio() {
 
     //검색 데이터 필터링
     const filteredItems = useMemo(() => {
-        return portfolioDatas.filter((item) => {
+        return postData.filter((item) => {
             const matchesTab =
-                activeTab.kategorie === "all" ||
-                item.kategorie === activeTab.kategorie;
+                activeTab.value === "전체" ||
+                item.kategorie.includes(activeTab.value);
             const matchesSearch =
                 searchKeyword === "" ||
                 item.title.toLowerCase().includes(searchKeyword.toLowerCase());
@@ -41,7 +45,7 @@ function Portfolio() {
         <div>
             <h2>Portfolio Page</h2>
             <Tab
-                tabDatas={tabDatas}
+                tabData={tabData}
                 activeTab={activeTab}
                 setActiveTab={handleActiveTab}
             />

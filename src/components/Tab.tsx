@@ -1,18 +1,17 @@
 import React, { useState } from "react";
 
 export interface ITabProps {
-    tabDatas: ITab[];
+    tabData: ITab[];
     activeTab?: ITab;
     setActiveTab: any;
 }
 
 export interface ITab {
-    number: number;
     label: string;
-    kategorie: string;
+    value: string;
 }
 
-function Tab({ tabDatas, activeTab, setActiveTab }: ITabProps) {
+function Tab({ tabData, activeTab, setActiveTab }: ITabProps) {
     const handleClick = (tab: ITab) => {
         setActiveTab(tab);
     };
@@ -21,11 +20,11 @@ function Tab({ tabDatas, activeTab, setActiveTab }: ITabProps) {
         <div>
             <nav>
                 <ul className="menu_tab">
-                    {tabDatas.map((tab) => (
+                    {tabData.map((tab) => (
                         <TabItem
-                            key={tab.kategorie}
+                            key={tab.value}
                             tab={tab}
-                            isActive={activeTab?.kategorie === tab.kategorie}
+                            isActive={activeTab?.value === tab.value}
                             onClick={handleClick}
                         />
                     ))}

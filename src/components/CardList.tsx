@@ -22,7 +22,7 @@ function CardItem({ item }: any) {
         <div className="card_item">
             <Link to={`/portfolio/${item.id}`}>
                 <img
-                    src={item.imgSrc}
+                    src={item.thumbnail.imgSrc}
                     alt={item.title}
                     className="card_image"
                 />
