@@ -1,32 +1,271 @@
 [
     {
-        "title": "제목제목제목1",
+        "title": "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
         "id": "1_title1",
         "files": [
-            { "id": 1, "imgSrc": "/uploads/post/1_title1/1.jpg" },
-            { "id": 2, "imgSrc": "/uploads/post/1_title1/2.jpg" },
-            { "id": 3, "imgSrc": "/uploads/post/1_title1/3.jpg" },
-            { "id": 4, "imgSrc": "/uploads/post/1_title1/4.webp" },
-            { "id": 5, "imgSrc": "/uploads/post/1_title1/5.webp" }
+            {
+                "id": 1,
+                "type": "video",
+                "imgSrc": "/uploads/post/1_title1/1.mp4"
+            },
+            {
+                "id": 2,
+                "type": "image",
+                "imgSrc": "/uploads/post/1_title1/2.jpg"
+            },
+            {
+                "id": 3,
+                "type": "image",
+                "imgSrc": "/uploads/post/1_title1/3.jpg"
+            },
+            {
+                "id": 4,
+                "type": "image",
+                "imgSrc": "/uploads/post/1_title1/4.jpg"
+            },
+            {
+                "id": 5,
+                "type": "video",
+                "imgSrc": "/uploads/post/1_title1/5.mp4"
+            },
+            {
+                "id": 6,
+                "type": "image",
+                "imgSrc": "/uploads/post/1_title1/5.webp"
+            },
+            {
+                "id": 7,
+                "type": "image",
+                "imgSrc": "/uploads/post/1_title1/6.webp"
+            },
+            {
+                "id": 8,
+                "type": "video_link",
+                "link": "https://youtu.be/sr2WU5Y-cn0?si=aQmUq6jXsIYrLuMb"
+            }
         ],
         "thumbnail": {
             "id": 1,
             "imgSrc": "/uploads/post/1_title1/thumbnail.PNG"
         },
-        "kategorie": ["태그1", "태그3"]
+        "kategorie": [
+            "태그1",
+            "태그2",
+            "태그3"
+        ]
     },
     {
         "title": "제목제목제목22",
         "id": "2_title2",
         "files": [
-            { "id": 1, "imgSrc": "/uploads/post/2_title2/1.jpg" },
-            { "id": 2, "imgSrc": "/uploads/post/2_title2/2.jpg" },
-            { "id": 3, "imgSrc": "/uploads/post/2_title2/3.jpg" }
+            {
+                "id": 1,
+                "type": "image",
+                "imgSrc": "/uploads/post/2_title2/1.jpg"
+            },
+            {
+                "id": 2,
+                "type": "image",
+                "imgSrc": "/uploads/post/2_title2/2.jpg"
+            },
+            {
+                "id": 3,
+                "type": "image",
+                "imgSrc": "/uploads/post/2_title2/3.jpg"
+            },
+            {
+                "id": 4,
+                "type": "video",
+                "imgSrc": "/uploads/post/2_title2/4.mp4"
+            },
+            {
+                "id": 5,
+                "type": "video",
+                "imgSrc": "/uploads/post/2_title2/5.mp4"
+            }
         ],
         "thumbnail": {
             "id": 1,
             "imgSrc": "/uploads/post/2_title2/thumbnail.PNG"
         },
-        "kategorie": ["태그1"]
+        "kategorie": [
+            "태그1",
+            "태그2",
+            "태그3"
+        ]
+    },
+    {
+        "title": "제목제목제목3",
+        "id": "3",
+        "files": [
+            {
+                "id": 1,
+                "type": "image",
+                "imgSrc": "/uploads/post/3/1.jpg"
+            },
+            {
+                "id": 2,
+                "type": "image",
+                "imgSrc": "/uploads/post/3/2.jpg"
+            },
+            {
+                "id": 3,
+                "type": "image",
+                "imgSrc": "/uploads/post/3/3.jpg"
+            }
+        ],
+        "thumbnail": {
+            "id": 1,
+            "imgSrc": "/uploads/post/3/thumbnail.PNG"
+        },
+        "kategorie": [
+            "태그1",
+            "태그2",
+            "태그3"
+        ]
+    },
+    {
+        "title": "제목4",
+        "id": "4_",
+        "files": [
+            {
+                "id": 1,
+                "type": "image",
+                "imgSrc": "/uploads/post/4_/1.jpg"
+            },
+            {
+                "id": 2,
+                "type": "image",
+                "imgSrc": "/uploads/post/4_/2.jpg"
+            },
+            {
+                "id": 3,
+                "type": "image",
+                "imgSrc": "/uploads/post/4_/3.jpg"
+            }
+        ],
+        "thumbnail": {
+            "id": 1,
+            "imgSrc": "/uploads/post/4_/thumbnail.PNG"
+        },
+        "kategorie": [
+            "태그4"
+        ]
+    },
+    {
+        "title": "제목5555",
+        "id": "5_",
+        "files": [
+            {
+                "id": 1,
+                "type": "image",
+                "imgSrc": "/uploads/post/5_/1.jpg"
+            },
+            {
+                "id": 2,
+                "type": "image",
+                "imgSrc": "/uploads/post/5_/2.jpg"
+            },
+            {
+                "id": 3,
+                "type": "image",
+                "imgSrc": "/uploads/post/5_/3.jpg"
+            }
+        ],
+        "thumbnail": {
+            "id": 1,
+            "imgSrc": "/uploads/post/5_/thumbnail.PNG"
+        },
+        "kategorie": [
+            "태그5"
+        ]
+    },
+    {
+        "title": "제목제목제목6666",
+        "id": "6_title6",
+        "files": [
+            {
+                "id": 1,
+                "type": "image",
+                "imgSrc": "/uploads/post/6_title6/1.jpg"
+            },
+            {
+                "id": 2,
+                "type": "image",
+                "imgSrc": "/uploads/post/6_title6/2.jpg"
+            },
+            {
+                "id": 3,
+                "type": "image",
+                "imgSrc": "/uploads/post/6_title6/3.jpg"
+            }
+        ],
+        "thumbnail": {
+            "id": 1,
+            "imgSrc": "/uploads/post/6_title6/thumbnail.PNG"
+        },
+        "kategorie": [
+            "태그1"
+        ]
+    },
+    {
+        "title": "제목제목제목7777777777777",
+        "id": "7_title7",
+        "files": [
+            {
+                "id": 1,
+                "type": "image",
+                "imgSrc": "/uploads/post/7_title7/1.jpg"
+            },
+            {
+                "id": 2,
+                "type": "image",
+                "imgSrc": "/uploads/post/7_title7/2.jpg"
+            },
+            {
+                "id": 3,
+                "type": "image",
+                "imgSrc": "/uploads/post/7_title7/3.jpg"
+            }
+        ],
+        "thumbnail": {
+            "id": 1,
+            "imgSrc": "/uploads/post/7_title7/thumbnail.PNG"
+        },
+        "kategorie": [
+            "태그1",
+            "태그2",
+            "태그3"
+        ]
+    },
+    {
+        "title": "제목제목제목888888888",
+        "id": "8",
+        "files": [
+            {
+                "id": 1,
+                "type": "image",
+                "imgSrc": "/uploads/post/8/1.jpg"
+            },
+            {
+                "id": 2,
+                "type": "image",
+                "imgSrc": "/uploads/post/8/2.jpg"
+            },
+            {
+                "id": 3,
+                "type": "image",
+                "imgSrc": "/uploads/post/8/3.jpg"
+            }
+        ],
+        "thumbnail": {
+            "id": 1,
+            "imgSrc": "/uploads/post/8/thumbnail.PNG"
+        },
+        "kategorie": [
+            "태그1",
+            "태그2",
+            "태그3"
+        ]
     }
 ]

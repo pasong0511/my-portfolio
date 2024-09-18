@@ -1,8 +1,6 @@
 import React from "react";
-
 import { useParams } from "react-router-dom";
 import PrevNextNavigation from "./PrevNextNavigation";
-
 import postData from "../data/postData.json";
 
 export interface PortfolioItem {
@@ -11,7 +9,9 @@ export interface PortfolioItem {
     kategorie: string[];
     files: {
         id: string;
-        imgSrc: string;
+        type: string;
+        imgSrc?: string; // 이미지와 비디오 파일의 경로
+        link?: string; // 비디오 링크 (유튜브 등)
     }[];
     thumbnail: {
         id: string;
@@ -57,6 +57,18 @@ function PortfolioDetail() {
 
     if (!currentItem) return <div>존재하지 않는 게시글 입니다.</div>;
 
+    // 유튜브 링크를 임베드용 링크로 변환하는 함수
+    const getYouTubeEmbedUrl = (url: string) => {
+        let videoId = "";
+        if (url.includes("youtube.com")) {
+            const urlParams = new URLSearchParams(new URL(url).search);
+            videoId = urlParams.get("v") || "";
+        } else if (url.includes("youtu.be")) {
+            videoId = url.split("/").pop() || "";
+        }
+        return `https://www.youtube.com/embed/${videoId}`;
+    };
+
     return (
         <div>
             <h1>{currentItem.title}</h1>
@@ -64,7 +76,29 @@ function PortfolioDetail() {
                 <ul>
                     {currentItem.files.map((item) => (
                         <li key={item.id}>
-                            <img src={item.imgSrc} alt="" />
+                            {item.type === "image" && (
+                                <img src={item.imgSrc} alt="" />
+                            )}
+                            {item.type === "video" && (
+                                <video controls>
+                                    <source
+                                        src={item.imgSrc}
+                                        type="video/mp4"
+                                    />
+                                    Your browser does not support the video tag.
+                                </video>
+                            )}
+                            {item.type === "video_link" && item.link && (
+                                <iframe
+                                    width="560"
+                                    height="315"
+                                    src={getYouTubeEmbedUrl(item.link)}
+                                    title="YouTube video player"
+                                    frameBorder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
+                                ></iframe>
+                            )}
                         </li>
                     ))}
                 </ul>
