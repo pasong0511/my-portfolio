@@ -12,9 +12,8 @@ all_kategorie = set()
 
 # 카테고리 JSON 파일로 저장할 데이터
 kategorie_data = [{
-    'label': '전체', 'value':'전체'
+    'label': '전체', 'value': '전체'
 }]
-
 
 # post 경로 하위 폴더 순회
 for folder_name in os.listdir(base_directory):
@@ -43,6 +42,7 @@ for folder_name in os.listdir(base_directory):
         # 파일 목록 생성
         files = []
         file_id = 1
+        thumbnail = None  # 썸네일 초기화
 
         # 폴더 내부에 들어가있는 파일 목록 기준으로 반복
         for file_name in os.listdir(folder_path):
@@ -50,23 +50,29 @@ for folder_name in os.listdir(base_directory):
             file_ext = os.path.splitext(file_name)[1].lower()
 
             # 이미지 파일만 처리
-            if file_ext in ['.jpg', '.jpeg', '.png', '.webp', '.gif']:  
-                # 썸네일 파일이 아닌 경우
-                if file_name != 'thumbnail.PNG':
+            if file_ext in ['.jpg', '.jpeg', '.png', '.webp', '.gif']:
+                if 'thumbnail' in file_name.lower():
+                    # 썸네일 파일 처리 (썸네일은 'thumbnail'이라는 단어가 포함된 파일명으로 가정)
+                    thumbnail = {
+                        'id': 1,
+                        'imgSrc': f'/uploads/post/{folder_name}/{file_name}'
+                    }
+                else:
+                    # 썸네일이 아닌 이미지 파일 처리
                     files.append({
                         'id': file_id,
-                        'type': 'image', 
+                        'type': 'image',
                         'imgSrc': f'/uploads/post/{folder_name}/{file_name}'
                     })
                     file_id += 1
 
             # 비디오 파일만 처리
-            elif file_ext in ['.mp4', '.api']: 
+            elif file_ext in ['.mp4', '.api']:
                 files.append({
-                        'id': file_id,
-                        'type': 'video', 
-                        'imgSrc': f'/uploads/post/{folder_name}/{file_name}'
-                    })
+                    'id': file_id,
+                    'type': 'video',
+                    'imgSrc': f'/uploads/post/{folder_name}/{file_name}'
+                })
                 file_id += 1
 
             # txt 파일 처리 (유튜브 링크)
@@ -81,11 +87,12 @@ for folder_name in os.listdir(base_directory):
                     })
                     file_id += 1
 
-        # 썸네일 처리
-        thumbnail = {
-            'id': 1,
-            'imgSrc': f'/uploads/post/{folder_name}/thumbnail.PNG'
-        }
+        # 썸네일이 없는 경우 기본값 설정 (필요할 경우)
+        if not thumbnail:
+            thumbnail = {
+                'id': 1,
+                'imgSrc': '/uploads/default/thumbnail.png'  # 기본 썸네일 경로
+            }
 
         # 각 폴더에 해당하는 데이터 추가
         post_data.append({
@@ -100,10 +107,9 @@ all_kategorie = sorted(all_kategorie)
 
 for kategorie in all_kategorie:
     kategorie_data.append({
-        'label' : kategorie,
-        'value' : kategorie
+        'label': kategorie,
+        'value': kategorie
     })
-
 
 # post_data 결과를 JSON 파일로 저장
 output_file = './src/data/postData.json'
@@ -112,7 +118,6 @@ with open(output_file, 'w', encoding='utf-8') as f:
     json.dump(post_data, f, ensure_ascii=False, indent=4)
 
 print(f"JSON 데이터가 {output_file}에 저장되었습니다.")
-
 
 # post_data 결과를 JSON 파일로 저장
 kategorie_data_output_file = './src/data/tabData.json'
