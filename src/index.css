@@ -179,6 +179,43 @@ a {
     transition: 0.5s;
 }
 
+#header .open_menu.open > div:nth-child(1) {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+#header .open_menu.open > div:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+    opacity: 0;
+}
+
+#header .open_menu.open > div:nth-child(3) {
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+#header .ditail_menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100vh;
+    padding: 0;
+    background: #1a1a1a;
+    z-index: 8;
+    opacity: 0;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+#header .ditail_menu.open {
+    opacity: 1;
+    z-index: 8;
+    width: 100vw;
+    padding: 100px;
+}
+
 #footer {
     background: #1a1a1a;
 }

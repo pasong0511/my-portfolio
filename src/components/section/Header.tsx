@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import SideMenu from "../SideMenu";
 
 interface IHeaderProps {
     routes: any[];
@@ -74,11 +75,7 @@ function Header({ routes }: IHeaderProps) {
                         ))}
                 </ul>
             </nav>
-            <div className="open_menu">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
+            <SideMenu routes={routes} />
         </div>
     );
 }
