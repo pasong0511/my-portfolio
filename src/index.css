@@ -374,3 +374,9 @@ a {
 .navigation_list a {
     color: #fff;
 }
+
+.side_menu {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+}

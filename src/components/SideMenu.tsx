@@ -9,8 +9,6 @@ function SideMenu({ routes }: any) {
         setIsOpen((state) => !state);
     };
 
-    console.log("메뉴목록", routes);
-
     const handleClose = () => {
         setIsOpen(false);
     };
@@ -58,11 +56,38 @@ function SideMenuList({
                         <li key={index} onClick={handleClick}>
                             {route.children ? (
                                 <>
-                                    <span>{route.name}</span>
+                                    <span className="side_menu">
+                                        {route.name}
+                                    </span>
+                                    {
+                                        <ul>
+                                            {route.children.map(
+                                                (
+                                                    child: any,
+                                                    childIndex: number
+                                                ) => (
+                                                    <li key={childIndex}>
+                                                        <a
+                                                            href={
+                                                                child.externalLink
+                                                            }
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="submenu_link"
+                                                        >
+                                                            {child.name}
+                                                        </a>
+                                                    </li>
+                                                )
+                                            )}
+                                        </ul>
+                                    }
                                 </>
                             ) : (
                                 <Link to={route.path}>
-                                    <span>{route.name}</span>
+                                    <span className="side_menu">
+                                        {route.name}
+                                    </span>
                                 </Link>
                             )}
                         </li>
