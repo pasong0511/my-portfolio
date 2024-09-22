@@ -1,5 +1,5 @@
 import React from "react";
-import EmailForm from "../EmailForm";
+import EmailForm from "../section/EmailForm";
 
 function Footer() {
     return (

@@ -1,6 +1,6 @@
-import Profile from "./components/Profile";
-import Portfolio from "./components/Portfolio";
-import PortfolioDetail from "./components/PortfolioDetail";
+import Profile from "./components/pages/Profile";
+import Portfolio from "./components/pages/Portfolio";
+import PortfolioDetail from "./components/pages/PortfolioDetail";
 
 const routes = [
     {

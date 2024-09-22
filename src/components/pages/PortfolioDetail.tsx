@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import PrevNextNavigation from "./PrevNextNavigation";
-import postData from "../data/postData.json";
+
+import PrevNextNavigation from "../navigation/PrevNextNavigation";
+
+import postData from "../../data/postData.json";
 
 export interface PortfolioItem {
     id: string;

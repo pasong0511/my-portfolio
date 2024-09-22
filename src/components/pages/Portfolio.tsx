@@ -1,14 +1,13 @@
 import React, { useState, useMemo } from "react";
 
-import Tab, { ITab } from "./Tab";
-import CardList from "./CardList";
+import Tab, { ITab } from "../section/Tab";
+import CardList from "../ui/CardList";
 
-import Search from "./Search";
-import SearchModal from "./SearchModal";
+import Search from "../ui/Search";
+import SearchModal from "../ui/SearchModal";
 
-import postData from "../data/postData.json";
-
-import tabData from "../data/tabData.json";
+import postData from "../../data/postData.json";
+import tabData from "../../data/tabData.json";
 
 function Portfolio() {
     const [activeTab, setActiveTab] = useState<ITab>(tabData[0]);

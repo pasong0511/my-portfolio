@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { PortfolioItem } from "./PortfolioDetail";
+import { PortfolioItem } from "../pages/PortfolioDetail";
 
 import { SlArrowUp, SlArrowDown } from "react-icons/sl";
 
