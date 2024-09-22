@@ -8,6 +8,7 @@ import SearchModal from "../ui/SearchModal";
 
 import postData from "../../data/postData.json";
 import tabData from "../../data/tabData.json";
+import { PostData } from "../../types/post";
 
 function Portfolio() {
     const [activeTab, setActiveTab] = useState<ITab>(tabData[0]);
@@ -37,7 +38,7 @@ function Portfolio() {
                 searchKeyword === "" ||
                 item.title.toLowerCase().includes(searchKeyword.toLowerCase());
             return matchesTab && matchesSearch;
-        });
+        }) as PostData;
     }, [activeTab, searchKeyword]);
 
     return (

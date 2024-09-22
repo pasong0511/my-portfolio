@@ -5,47 +5,28 @@ import PrevNextNavigation from "../navigation/PrevNextNavigation";
 
 import postData from "../../data/postData.json";
 
-export interface PortfolioItem {
-    id: string;
-    title: string;
-    kategorie: string[];
-    files: {
-        id: string;
-        type: string;
-        imgSrc?: string; // 이미지와 비디오 파일의 경로
-        link?: string; // 비디오 링크 (유튜브 등)
-    }[];
-    thumbnail: {
-        id: string;
-        imgSrc: string;
-    };
+import { PostItem } from "../../types/post";
+
+interface PrevNextItem {
+    prev: PostItem | null;
+    next: PostItem | null;
 }
 
 function PortfolioDetail() {
     const { id } = useParams();
 
-    console.log("내가 클릭한 데이터의 id", id);
-    console.log("json 데이터로 만든데이터 전체목록", postData);
-
     const currentItemIndex = id
         ? postData.findIndex((item, index) => item.id === id)
         : -1;
-
-    console.log("인덱스", currentItemIndex);
 
     const currentItem =
         currentItemIndex !== null && currentItemIndex !== -1
             ? postData[currentItemIndex]
             : null;
 
-    console.log("🛩 아이템 목록 한개 ", currentItem);
-
-    const prevNextItem =
+    const prevNextItem: PrevNextItem =
         currentItemIndex !== -1 && currentItemIndex !== null
-            ? postData.reduce<{
-                  prev: any | null;
-                  next: any | null;
-              }>(
+            ? postData.reduce<any>(
                   (acc, item, index, arr) => {
                       if (index === currentItemIndex) {
                           acc.prev = arr[index - 1] || null;

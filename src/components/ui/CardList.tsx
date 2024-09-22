@@ -1,8 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import { PostData, PostItem } from "../../types/post";
+
 interface CardListProps {
-    filteredItems: any[];
+    filteredItems: PostData;
+}
+
+interface CardItemProps {
+    item: PostItem;
 }
 
 function CardList({ filteredItems }: CardListProps) {
@@ -17,7 +23,7 @@ function CardList({ filteredItems }: CardListProps) {
     );
 }
 
-function CardItem({ item }: any) {
+function CardItem({ item }: CardItemProps) {
     return (
         <div className="card_item">
             <Link to={`/portfolio/${item.id}`}>

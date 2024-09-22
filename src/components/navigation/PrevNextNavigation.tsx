@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { PortfolioItem } from "../pages/PortfolioDetail";
+
+import { PostItem } from "../../types/post";
 
 import { SlArrowUp, SlArrowDown } from "react-icons/sl";
 
@@ -8,8 +9,8 @@ function PrevNextNavigation({
     prevNextItem,
 }: {
     prevNextItem: {
-        prev: PortfolioItem | null;
-        next: PortfolioItem | null;
+        prev: PostItem | null;
+        next: PostItem | null;
     };
 }) {
     return (

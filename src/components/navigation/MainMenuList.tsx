@@ -5,8 +5,7 @@ import { RouteConfig } from "../../types/route";
 
 export interface MainMenuListProps {
     routes: RouteConfig[];
-    type?: string;
-    showSubmenu: any;
+    showSubmenu: number | null;
     handleMouseEnter: (index: number) => void;
     handleMouseLeave: () => void;
 }
