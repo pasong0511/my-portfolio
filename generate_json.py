@@ -11,9 +11,7 @@ post_data = []
 all_kategorie = set()
 
 # 카테고리 JSON 파일로 저장할 데이터
-kategorie_data = [{
-    'label': '전체', 'value': '전체'
-}]
+kategorie_data = [{'label': '전체', 'value': '전체'}]
 
 # post 경로 하위 폴더 순회
 for folder_name in os.listdir(base_directory):
@@ -31,7 +29,7 @@ for folder_name in os.listdir(base_directory):
         sub_title = ""  # 서브 타이틀 초기화
         date = ""  # 날짜 초기화
 
-        # info.txt 파일이 존재하면 제목과 카테고리를 읽어옴
+        # info.txt 파일이 존재하면 내용을 읽어옴
         if os.path.exists(info_file_path):
             info_data = {}
             with open(info_file_path, 'r', encoding='utf-8') as f:
@@ -48,7 +46,10 @@ for folder_name in os.listdir(base_directory):
             title = info_data.get('title', title)  # 'title' 키의 값 가져오거나 기본 폴더명 사용
             kategorie = info_data.get('tag', '').split('#')[1:]  # 'tag' 키의 값에서 '#'을 기준으로 분할
             sub_title = info_data.get('subTitle', '')  # 'subTitle' 키의 값 가져오기
-            date = info_data.get('date', '')  # '날짜' 키의 값 가져오기
+            date = info_data.get('날짜', '')  # '날짜' 키의 값 가져오기
+
+            # 카테고리 중복 제거 후 추가
+            all_kategorie.update(kategorie)
 
         # 파일 목록 생성
         files = []
@@ -116,6 +117,7 @@ for folder_name in os.listdir(base_directory):
             'kategorie': kategorie
         })
 
+# 카테고리 정렬 및 중복 제거 후 추가
 all_kategorie = sorted(all_kategorie)
 
 for kategorie in all_kategorie:
@@ -132,7 +134,7 @@ with open(output_file, 'w', encoding='utf-8') as f:
 
 print(f"JSON 데이터가 {output_file}에 저장되었습니다.")
 
-# post_data 결과를 JSON 파일로 저장
+# 카테고리 데이터 결과를 JSON 파일로 저장
 kategorie_data_output_file = './src/data/tabData.json'
 os.makedirs(os.path.dirname(kategorie_data_output_file), exist_ok=True)  # 디렉터리가 없는 경우 생성
 with open(kategorie_data_output_file, 'w', encoding='utf-8') as f:
