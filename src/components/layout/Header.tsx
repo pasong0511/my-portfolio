@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import MainMenuList from "../navigation/MainMenuList";
+import SideMenu from "./SideMenu";
 
 interface IHeaderProps {
     routes: any[];
@@ -38,6 +39,7 @@ function Header({ routes }: IHeaderProps) {
                     handleMouseLeave={handleMouseLeave}
                 />
             </nav>
+            <SideMenu routes={routes} />
         </div>
     );
 }
