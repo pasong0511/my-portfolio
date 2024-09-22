@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import { RouteConfig } from "../../types/route";
+
 export interface MainMenuListProps {
-    routes: any[];
+    routes: RouteConfig[];
     type?: string;
     showSubmenu: any;
     handleMouseEnter: (index: number) => void;

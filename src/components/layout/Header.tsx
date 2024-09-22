@@ -4,8 +4,10 @@ import { Link } from "react-router-dom";
 import MainMenuList from "../navigation/MainMenuList";
 import SideMenu from "./SideMenu";
 
+import { RouteConfig } from "../../types/route";
+
 interface IHeaderProps {
-    routes: any[];
+    routes: RouteConfig[];
 }
 
 function Header({ routes }: IHeaderProps) {

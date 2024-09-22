@@ -1,11 +1,13 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
-interface IHeaderProps {
-    routes: any[];
+import { RouteConfig } from "../../types/route";
+
+interface IContentProps {
+    routes: RouteConfig[];
 }
 
-function Content({ routes }: IHeaderProps) {
+function Content({ routes }: IContentProps) {
     return (
         <div id="content">
             <Routes>

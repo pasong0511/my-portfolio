@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { RouteConfig } from "../../types/route";
 
 export interface SideMenuListProps {
-    routes: any[];
+    routes: RouteConfig[];
     handleClick: () => void;
 }
 

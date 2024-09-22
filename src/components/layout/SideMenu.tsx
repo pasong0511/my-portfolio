@@ -1,8 +1,20 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+
 import SideMenuList from "../navigation/SideMenuList";
 
-function SideMenu({ routes }: any) {
+import { RouteConfig } from "../../types/route";
+
+interface SideMenuProps {
+    routes: RouteConfig[];
+}
+
+interface SideMenuWrapperProps {
+    isOpen: boolean;
+    routes: RouteConfig[];
+    handleClose: () => void;
+}
+
+function SideMenu({ routes }: SideMenuProps) {
     const [isOpen, setIsOpen] = useState(false);
 
     const onClickSideMenu = () => {
@@ -38,11 +50,7 @@ function SideMenuWrapper({
     isOpen,
     routes,
     handleClose,
-}: {
-    isOpen: boolean;
-    routes: any[];
-    handleClose: any;
-}) {
+}: SideMenuWrapperProps) {
     const handleClick = () => {
         handleClose();
     };
