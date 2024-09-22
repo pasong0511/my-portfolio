@@ -77,6 +77,8 @@ function PortfolioDetail() {
     return (
         <div>
             <h1>{currentItem.title}</h1>
+            <h2>{currentItem?.subTitle}</h2>
+            <h2>{currentItem?.date}</h2>
             <div>
                 <ul>
                     {currentItem.files.map((item) => (

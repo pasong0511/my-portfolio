@@ -28,16 +28,27 @@ for folder_name in os.listdir(base_directory):
 
         title = folder_name  # 기본 폴더명을 제목으로 사용
         kategorie = []  # 카테고리 목록
+        sub_title = ""  # 서브 타이틀 초기화
+        date = ""  # 날짜 초기화
 
         # info.txt 파일이 존재하면 제목과 카테고리를 읽어옴
         if os.path.exists(info_file_path):
+            info_data = {}
             with open(info_file_path, 'r', encoding='utf-8') as f:
                 # info.txt 파일 내부 한줄씩 읽기
                 lines = f.readlines()
 
-                title = lines[0].strip()  # 첫 번째 줄은 제목
-                kategorie = lines[1].strip().split('#')[1:]  # 두 번째 줄을 카테고리, #으로 분리 후 배열로 저장
-                all_kategorie.update(kategorie)
+                # 각 라인을 ':' 기준으로 구분하여 키:값 형태로 딕셔너리에 저장
+                for line in lines:
+                    if ':' in line:
+                        key, value = line.split(':', 1)  # ':' 기준으로 키와 값 구분, 오른쪽부터 한번만 분할
+                        info_data[key.strip()] = value.strip()  # 양쪽 공백 제거 후 저장
+
+            # 각 키에 따라 필요한 데이터 추출
+            title = info_data.get('title', title)  # 'title' 키의 값 가져오거나 기본 폴더명 사용
+            kategorie = info_data.get('tag', '').split('#')[1:]  # 'tag' 키의 값에서 '#'을 기준으로 분할
+            sub_title = info_data.get('subTitle', '')  # 'subTitle' 키의 값 가져오기
+            date = info_data.get('date', '')  # '날짜' 키의 값 가져오기
 
         # 파일 목록 생성
         files = []
@@ -97,6 +108,8 @@ for folder_name in os.listdir(base_directory):
         # 각 폴더에 해당하는 데이터 추가
         post_data.append({
             'title': title,
+            'subTitle': sub_title,
+            'date': date,
             'id': folder_name,
             'files': files,
             'thumbnail': thumbnail,

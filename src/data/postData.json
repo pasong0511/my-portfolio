@@ -1,6 +1,8 @@
 [
     {
         "title": "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
+        "subTitle": "서브타이틀",
+        "date": "2024.02.01",
         "id": "1_title1",
         "files": [
             {
@@ -55,7 +57,9 @@
         ]
     },
     {
-        "title": "제목제목제목22",
+        "title": "2_title2",
+        "subTitle": "",
+        "date": "",
         "id": "2_title2",
         "files": [
             {
@@ -88,14 +92,12 @@
             "id": 1,
             "imgSrc": "/uploads/post/2_title2/thumbnail.PNG"
         },
-        "kategorie": [
-            "태그1",
-            "태그2",
-            "태그3"
-        ]
+        "kategorie": []
     },
     {
-        "title": "제목제목제목3",
+        "title": "3",
+        "subTitle": "",
+        "date": "",
         "id": "3",
         "files": [
             {
@@ -118,14 +120,12 @@
             "id": 1,
             "imgSrc": "/uploads/post/3/thumbnail.PNG"
         },
-        "kategorie": [
-            "태그1",
-            "태그2",
-            "태그3"
-        ]
+        "kategorie": []
     },
     {
-        "title": "제목4",
+        "title": "4_",
+        "subTitle": "",
+        "date": "",
         "id": "4_",
         "files": [
             {
@@ -148,12 +148,12 @@
             "id": 1,
             "imgSrc": "/uploads/post/4_/thumbnail.PNG"
         },
-        "kategorie": [
-            "태그4"
-        ]
+        "kategorie": []
     },
     {
-        "title": "제목5555",
+        "title": "5_",
+        "subTitle": "",
+        "date": "",
         "id": "5_",
         "files": [
             {
@@ -176,12 +176,12 @@
             "id": 1,
             "imgSrc": "/uploads/post/5_/thumbnail.PNG"
         },
-        "kategorie": [
-            "태그5"
-        ]
+        "kategorie": []
     },
     {
-        "title": "제목제목제목6666",
+        "title": "6_title6",
+        "subTitle": "",
+        "date": "",
         "id": "6_title6",
         "files": [
             {
@@ -204,12 +204,12 @@
             "id": 1,
             "imgSrc": "/uploads/post/6_title6/thumbnail.PNG"
         },
-        "kategorie": [
-            "태그1"
-        ]
+        "kategorie": []
     },
     {
-        "title": "제목제목제목7777777777777",
+        "title": "7_title7",
+        "subTitle": "",
+        "date": "",
         "id": "7_title7",
         "files": [
             {
@@ -232,14 +232,12 @@
             "id": 1,
             "imgSrc": "/uploads/post/7_title7/thumbnail.PNG"
         },
-        "kategorie": [
-            "태그1",
-            "태그2",
-            "태그3"
-        ]
+        "kategorie": []
     },
     {
-        "title": "제목제목제목888888888",
+        "title": "8",
+        "subTitle": "",
+        "date": "",
         "id": "8",
         "files": [
             {
@@ -262,10 +260,6 @@
             "id": 1,
             "imgSrc": "/uploads/post/8/thumbnail.PNG"
         },
-        "kategorie": [
-            "태그1",
-            "태그2",
-            "태그3"
-        ]
+        "kategorie": []
     }
 ]
