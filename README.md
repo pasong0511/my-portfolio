@@ -8,3 +8,6 @@
 
 이렇게하면 서버가 필요없다.
 사용자가 할건, 폴더만들기, 이미지 넣기, 인덱스 바꿔주기
+
+구글 폰트를 svg로 변경해주는 사이트
+https://danmarshall.github.io/google-font-to-svg-path/
