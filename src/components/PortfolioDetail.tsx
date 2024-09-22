@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import PrevNextNavigation from "./PrevNextNavigation";
 import postData from "../data/postData.json";
@@ -55,8 +55,6 @@ function PortfolioDetail() {
               )
             : { prev: null, next: null };
 
-    if (!currentItem) return <div>존재하지 않는 게시글 입니다.</div>;
-
     // 유튜브 링크를 임베드용 링크로 변환하는 함수
     const getYouTubeEmbedUrl = (url: string) => {
         let videoId = "";
@@ -68,6 +66,13 @@ function PortfolioDetail() {
         }
         return `https://www.youtube.com/embed/${videoId}`;
     };
+
+    useEffect(() => {
+        // 컴포넌트가 렌더링될 때마다 스크롤을 맨 위로 올림
+        window.scrollTo(0, 0);
+    }, [id]);
+
+    if (!currentItem) return <div>존재하지 않는 게시글 입니다.</div>;
 
     return (
         <div>
