@@ -28,7 +28,7 @@ function SideMenu({ routes }: SideMenuProps) {
     return (
         <>
             <div
-                className={`open_menu ${isOpen ? "open" : ""}`}
+                className={`header-side-menu-button ${isOpen ? "open" : ""}`}
                 onClick={onClickSideMenu}
             >
                 <div></div>
@@ -56,7 +56,7 @@ function SideMenuWrapper({
     };
 
     return (
-        <div className={`ditail_menu ${isOpen ? "open" : ""}`}>
+        <div className={`side-menu-overay ${isOpen ? "open" : ""}`}>
             <SideMenuList routes={routes} handleClick={handleClick} />
         </div>
     );

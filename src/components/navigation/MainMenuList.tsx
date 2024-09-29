@@ -17,7 +17,7 @@ function MainMenuList({
     handleMouseLeave,
 }: MainMenuListProps) {
     return (
-        <ul className="main_menu">
+        <ul className="main-menu-list">
             {routes
                 .filter((route) => route.name) // name이 있는 경우에만 메뉴에 표시
                 .map((route, index) => (
@@ -25,12 +25,13 @@ function MainMenuList({
                         key={index}
                         onMouseEnter={() => handleMouseEnter(index)}
                         onMouseLeave={handleMouseLeave}
+                        className="menu-item"
                     >
                         {route.children ? (
                             <>
                                 <span>{route.name}</span>
                                 {showSubmenu === index && (
-                                    <ul className="submenu">
+                                    <ul className="children-menu">
                                         {route.children.map(
                                             (
                                                 child: any,
@@ -43,9 +44,11 @@ function MainMenuList({
                                                         }
                                                         target="_blank"
                                                         rel="noopener noreferrer"
-                                                        className="submenu_link"
+                                                        className="children-menu-link"
                                                     >
-                                                        {child.name}
+                                                        <span>
+                                                            {child.name}
+                                                        </span>
                                                     </a>
                                                 </li>
                                             )

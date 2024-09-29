@@ -23,25 +23,25 @@ function Header({ routes }: IHeaderProps) {
 
     return (
         <div id="header">
-            <div className="logo">
-                <Link to={`/`}>
-                    <img
-                        src="/theme/portfolio/img/logo.svg"
-                        alt="박진희 포트폴리오"
-                        title=""
-                    />
-                </Link>
-            </div>
-
             <nav>
+                <div className="logo">
+                    <Link to={`/`}>
+                        <p>
+                            PARK
+                            <br />
+                            JINHEE
+                        </p>
+                    </Link>
+                </div>
+
                 <MainMenuList
                     routes={routes}
                     showSubmenu={showSubmenu}
                     handleMouseEnter={handleMouseEnter}
                     handleMouseLeave={handleMouseLeave}
                 />
+                <SideMenu routes={routes} />
             </nav>
-            <SideMenu routes={routes} />
         </div>
     );
 }
