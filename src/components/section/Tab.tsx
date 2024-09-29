@@ -17,20 +17,16 @@ function Tab({ tabData, activeTab, setActiveTab }: ITabProps) {
     };
 
     return (
-        <div>
-            <nav>
-                <ul className="menu_tab">
-                    {tabData.map((tab) => (
-                        <TabItem
-                            key={tab.value}
-                            tab={tab}
-                            isActive={activeTab?.value === tab.value}
-                            onClick={handleClick}
-                        />
-                    ))}
-                </ul>
-            </nav>
-        </div>
+        <ul className="tab">
+            {tabData.map((tab) => (
+                <TabItem
+                    key={tab.value}
+                    tab={tab}
+                    isActive={activeTab?.value === tab.value}
+                    onClick={handleClick}
+                />
+            ))}
+        </ul>
     );
 }
 
@@ -50,9 +46,9 @@ function TabItem({
     return (
         <li
             onClick={handleClick}
-            className={`tab_item ${isActive ? "active" : ""}`}
+            className={`tab-item ${isActive ? "active" : ""}`}
         >
-            <div>{tab.label}</div>
+            <span>{tab.label}</span>
         </li>
     );
 }

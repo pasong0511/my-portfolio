@@ -9,6 +9,7 @@
 /* =============================================== */
 
 #header {
+    flex: 0;
     width: 100%;
     height: 100px;
     position: fixed;
@@ -58,6 +59,11 @@
 #header .main-menu-list .menu-item {
     font-size: 16px;
     margin: 0 30px 0 60px;
+}
+#header .main-menu-list .menu-item span {
+    font-family: "Fredoka", sans-serif;
+    font-weight: 300;
+    font-style: normal;
 }
 
 .main-menu-list .menu-item {
@@ -257,4 +263,154 @@
 
 #header .side-menu-list .children-menu .children-menu-link.icon svg:hover {
     color: #1a1a1a;
+}
+
+/* =============================================== */
+/* ==================== 콘텐츠 ===================== */
+/* =============================================== */
+#content {
+    flex: 1;
+    padding: 20px;
+    padding-top: 130px;
+    background: #1a1a1a;
+}
+
+/* 페이지 타이틀 섹션 */
+#content .page-title-section {
+}
+#content .page-title-section h2 {
+    font-family: "Fredoka", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #fff;
+}
+
+/* 서치 탭 */
+#content .tab {
+    display: flex;
+    flex-direction: row;
+}
+
+#content .tab .tab-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    line-height: 26px;
+    padding: 5px 15px;
+    border-radius: 30px;
+    margin-right: 8px;
+    font-weight: bold;
+    border: 1px solid #fff;
+    color: #fff;
+    font-family: "Noto Sans KR", sans-serif;
+    cursor: pointer;
+}
+
+#content .tab .tab-item:hover,
+#content .tab .tab-item.active {
+    background: #2e5fff;
+}
+
+/* 서치 섹션 */
+#content .search-section {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 10px 0;
+}
+#content .search-section .search button svg {
+    font-size: 28px;
+    color: #fff;
+}
+
+#content .search-section .search {
+    margin-left: auto;
+}
+
+#content .search-section .search button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#content .search-section .search button svg {
+    font-size: 36px;
+    color: #fff;
+}
+
+/* 카드 섹션 */
+#content .card-section .card-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#content .card-section .card-list .card-item {
+    position: relative;
+    width: 300px;
+    height: 280px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#content .card-section .card-list .card-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+#content .card-section .card-list .card-item:hover img {
+    transform: scale(1.1);
+}
+
+#content .card-section .card-list .card-item h3 {
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: 700;
+
+    margin: 10px 0 0;
+    font-size: 28px;
+    color: #ffffff;
+}
+
+.card-item .card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: #fff;
+    font-size: 18px;
+    text-align: left;
+    padding: 0 15px;
+    box-sizing: border-box;
+    border-radius: 20px;
+}
+
+.card-item:hover .card-overlay {
+    opacity: 1;
+}
+
+.card-item .card-overlay .item-kategorie {
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 70px;
+    font-weight: 400;
+
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 10px;
+    display: flex;
+    gap: 10px;
 }

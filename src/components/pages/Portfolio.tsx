@@ -42,24 +42,30 @@ function Portfolio() {
     }, [activeTab, searchKeyword]);
 
     return (
-        <div>
-            <h2>Portfolio Page</h2>
-            <Tab
-                tabData={tabData}
-                activeTab={activeTab}
-                setActiveTab={handleActiveTab}
-            />
-            <Search setIsModalOpen={setIsModalOpen} />
-            <div>
+        <>
+            <article className="page-title-section">
+                <h2>Portfolio Page</h2>
+            </article>
+            <article>
+                <Tab
+                    tabData={tabData}
+                    activeTab={activeTab}
+                    setActiveTab={handleActiveTab}
+                />
+            </article>
+            <article className="search-section">
+                <Search setIsModalOpen={setIsModalOpen} />
+                <SearchModal
+                    searchKeyword={searchKeyword}
+                    isModalOpen={isModalOpen}
+                    onClose={handleClose}
+                    onChangeSearchKeyword={onChangeSearchKeyword}
+                />
+            </article>
+            <article className="card-section">
                 <CardList filteredItems={filteredItems} />
-            </div>
-            <SearchModal
-                searchKeyword={searchKeyword}
-                isModalOpen={isModalOpen}
-                onClose={handleClose}
-                onChangeSearchKeyword={onChangeSearchKeyword}
-            />
-        </div>
+            </article>
+        </>
     );
 }
 
